@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import routes from './router';
 const app = express();
 
@@ -8,6 +9,7 @@ const app = express();
 
 //const username = getUsername();
 
+app.use(cors());
 app.use(routes);
 app.get('/', (req, res) =>{
     return res.send('Hello World 2');
